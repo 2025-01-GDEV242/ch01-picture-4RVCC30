@@ -32,9 +32,37 @@ public class Picture
     /**
      * Draw this picture.
      */
+    public void erase()
+    {
+        if(drawn)
+        {
+ 
+            wall.makeInvisible();
+            wall.moveHorizontal(140);
+            wall.moveVertical(-20);
+            
+
+            window.makeInvisible();
+            window.moveHorizontal(120);
+            window.moveVertical(-40);
+            
+            
+            roof.makeInvisible();
+            roof.moveHorizontal(-20);
+            roof.moveVertical(60);
+            
+            
+            sun.makeInvisible();
+            sun.moveHorizontal(-100);
+            sun.moveVertical(40);
+            
+            drawn = false;
+        }
+    }
     public void draw()
     {
         if(!drawn) {
+            wall.changeColor("red");
             wall.moveHorizontal(-140);
             wall.moveVertical(20);
             wall.changeSize(120);
@@ -46,6 +74,7 @@ public class Picture
             window.changeSize(40);
             window.makeVisible();
     
+            roof.changeColor("green");
             roof.changeSize(60, 180);
             roof.moveHorizontal(20);
             roof.moveVertical(-60);
