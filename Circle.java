@@ -27,6 +27,15 @@ public class Circle
         color = "blue";
     }
 
+    public int getX()
+    {
+        return xPosition - 230;
+    }
+    public int getY()
+    {
+        return yPosition - 90;
+    }
+    
     /**
      * Make this circle visible. If it was already visible, do nothing.
      */

@@ -38,23 +38,23 @@ public class Picture
         {
  
             wall.makeInvisible();
-            wall.moveHorizontal(140);
-            wall.moveVertical(-20);
+            wall.moveHorizontal(-1 * wall.getX());
+            wall.moveVertical(-1 * wall.getY());
             
 
             window.makeInvisible();
-            window.moveHorizontal(120);
-            window.moveVertical(-40);
+            window.moveHorizontal(-1 * window.getX());
+            window.moveVertical(-1 * window.getY());
             
             
             roof.makeInvisible();
-            roof.moveHorizontal(-20);
-            roof.moveVertical(60);
+            roof.moveHorizontal(-1 * roof.getX());
+            roof.moveVertical(-1 * roof.getY());
             
             
             sun.makeInvisible();
-            sun.moveHorizontal(-100);
-            sun.moveVertical(40);
+            sun.moveHorizontal(-1 * sun.getX());
+            sun.moveVertical(-1 * sun.getY());
             
             drawn = false;
         }
@@ -62,26 +62,26 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            wall.changeColor("red");
-            wall.moveHorizontal(-140);
-            wall.moveVertical(20);
-            wall.changeSize(120);
+            wall.changeColor("black");
+            wall.moveHorizontal(-70);
+            wall.moveVertical(60);
+            wall.changeSize(30);
             wall.makeVisible();
             
             window.changeColor("black");
             window.moveHorizontal(-120);
-            window.moveVertical(40);
-            window.changeSize(40);
+            window.moveVertical(60);
+            window.changeSize(30);
             window.makeVisible();
     
-            roof.changeColor("green");
-            roof.changeSize(60, 180);
+            roof.changeColor("red");
+            roof.changeSize(100, 100);
             roof.moveHorizontal(20);
             roof.moveVertical(-60);
             roof.makeVisible();
     
             sun.changeColor("yellow");
-            sun.moveHorizontal(100);
+            sun.moveHorizontal(-40);
             sun.moveVertical(-40);
             sun.changeSize(80);
             sun.makeVisible();
@@ -95,7 +95,7 @@ public class Picture
     public void setBlackAndWhite()
     {
         wall.changeColor("black");
-        window.changeColor("white");
+        window.changeColor("black");
         roof.changeColor("black");
         sun.changeColor("black");
     }
@@ -105,9 +105,9 @@ public class Picture
      */
     public void setColor()
     {
-        wall.changeColor("red");
+        wall.changeColor("black");
         window.changeColor("black");
-        roof.changeColor("green");
+        roof.changeColor("red");
         sun.changeColor("yellow");
     }
 }

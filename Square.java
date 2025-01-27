@@ -14,6 +14,7 @@ public class Square
     private int yPosition;
     private String color;
     private boolean isVisible;
+    private int debugXPos;
 
     /**
      * Create a new square at default position with default color.
@@ -23,10 +24,20 @@ public class Square
         size = 60;
         xPosition = 310;
         yPosition = 120;
+        debugXPos = xPosition + 310;
         color = "red";
         isVisible = false;
     }
 
+        public int getX()
+    {
+        return xPosition - 310;
+    }
+    public int getY()
+    {
+        return yPosition - 120;
+    }
+    
     /**
      * Make this square visible. If it was already visible, do nothing.
      */

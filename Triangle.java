@@ -29,6 +29,15 @@ public class Triangle
         isVisible = false;
     }
 
+        public int getX()
+    {
+        return xPosition - 210;
+    }
+    public int getY()
+    {
+        return yPosition - 140;
+    }
+    
     /**
      * Make this triangle visible. If it was already visible, do nothing.
      */
