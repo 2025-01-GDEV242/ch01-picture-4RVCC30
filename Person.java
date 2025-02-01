@@ -28,7 +28,14 @@ public class Person
         color = "black";
         isVisible = false;
     }
-
+    public int getX ()
+    {
+        return xPosition - 280;
+    }
+    public int getY ()
+    {
+        return yPosition - 190;
+    }
     /**
      * Make this person visible. If it was already visible, do nothing.
      */

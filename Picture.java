@@ -11,10 +11,10 @@
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
-    private Circle sun;
+    private Square[] Squares = {null,null};
+    private Triangle[] Triangles = {null};
+    private Circle[] Circles = {null};
+    private Person[] People = {null,null};
     private boolean drawn;
 
     /**
@@ -22,10 +22,12 @@ public class Picture
      */
     public Picture()
     {
-        wall = new Square();
-        window = new Square();
-        roof = new Triangle();  
-        sun = new Circle();
+        Squares[0] = new Square();
+        Squares[1] = new Square();
+        Triangles[0] = new Triangle();  
+        Circles[0] = new Circle();
+        People[0] = new Person();
+        People[1] = new Person();
         drawn = false;
     }
 
@@ -37,24 +39,33 @@ public class Picture
         if(drawn)
         {
  
-            wall.makeInvisible();
-            wall.moveHorizontal(-1 * wall.getX());
-            wall.moveVertical(-1 * wall.getY());
+            for(Square s : Squares)
+            {
+                s.makeInvisible();
+                s.moveHorizontal(-1 * s.getX());
+                s.moveVertical(-1 * s.getY());
+            }
             
-
-            window.makeInvisible();
-            window.moveHorizontal(-1 * window.getX());
-            window.moveVertical(-1 * window.getY());
+            for(Triangle t : Triangles)
+            {
+                t.makeInvisible();
+                t.moveHorizontal(-1 * t.getX());
+                t.moveVertical(-1 * t.getY());
+            }
             
+            for(Circle c : Circles)
+            {
+                c.makeInvisible();
+                c.moveHorizontal(-1 * c.getX());
+                c.moveVertical(-1 * c.getY());
+            }
             
-            roof.makeInvisible();
-            roof.moveHorizontal(-1 * roof.getX());
-            roof.moveVertical(-1 * roof.getY());
-            
-            
-            sun.makeInvisible();
-            sun.moveHorizontal(-1 * sun.getX());
-            sun.moveVertical(-1 * sun.getY());
+            for(Person p : People)
+            {
+                p.makeInvisible();
+                p.moveHorizontal(-1 * p.getX());
+                p.moveVertical(-1 * p.getY());
+            }
             
             drawn = false;
         }
@@ -62,29 +73,42 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            wall.changeColor("black");
-            wall.moveHorizontal(-70);
-            wall.moveVertical(60);
-            wall.changeSize(30);
-            wall.makeVisible();
+            Squares[0].changeColor("black");
+            Squares[0].moveHorizontal(-70);
+            Squares[0].moveVertical(60);
+            Squares[0].changeSize(30);
+                       
+            Squares[1].changeColor("black");
+            Squares[1].moveHorizontal(-120);
+            Squares[1].moveVertical(60);
+            Squares[1].changeSize(30);
             
-            window.changeColor("black");
-            window.moveHorizontal(-120);
-            window.moveVertical(60);
-            window.changeSize(30);
-            window.makeVisible();
-    
-            roof.changeColor("red");
-            roof.changeSize(100, 100);
-            roof.moveHorizontal(20);
-            roof.moveVertical(-60);
-            roof.makeVisible();
-    
-            sun.changeColor("yellow");
-            sun.moveHorizontal(-40);
-            sun.moveVertical(-40);
-            sun.changeSize(80);
-            sun.makeVisible();
+            Triangles[0].changeColor("red");
+            Triangles[0].changeSize(100, 100);
+            Triangles[0].moveHorizontal(20);
+            Triangles[0].moveVertical(-60);
+               
+            Circles[0].changeColor("yellow");
+            Circles[0].moveHorizontal(-40);
+            Circles[0].moveVertical(-40);
+            Circles[0].changeSize(80);
+            
+            People[0].changeColor("blue");
+            People[0].moveHorizontal(-160);
+            People[0].moveVertical(-80);
+            People[0].changeSize(160,80);
+            
+            People[1].changeColor("green");
+            People[1].moveHorizontal(40);
+            People[1].moveVertical(-80);
+            People[1].changeSize(160,80);
+            
+            Triangles[0].makeVisible();
+            Circles[0].makeVisible();
+            People[0].makeVisible();
+            People[1].makeVisible();
+            Squares[1].makeVisible();
+            Squares[0].makeVisible();
             drawn = true;
         }
     }
@@ -94,10 +118,28 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        wall.changeColor("black");
-        window.changeColor("black");
-        roof.changeColor("black");
-        sun.changeColor("black");
+        Squares[0].changeColor("black");
+        
+        
+        Squares[1].changeColor("black");
+        Triangles[0].changeColor("black");
+        Circles[0].changeColor("black");
+        for(Person p : People)
+            {
+                p.changeColor("black");
+            }
+        for(Circle c : Circles)
+            {
+                c.changeColor("black");
+            }
+        for(Triangle t : Triangles)
+            {
+                t.changeColor("black");
+            }
+        for(Square s : Squares)
+            {
+                s.changeColor("black");
+            }
     }
 
     /**
@@ -105,9 +147,11 @@ public class Picture
      */
     public void setColor()
     {
-        wall.changeColor("black");
-        window.changeColor("black");
-        roof.changeColor("red");
-        sun.changeColor("yellow");
+        Squares[0].changeColor("black");
+        Squares[1].changeColor("black");
+        Triangles[0].changeColor("red");
+        Circles[0].changeColor("yellow");
+        People[0].changeColor("blue");
+        People[1].changeColor("green");
     }
 }
